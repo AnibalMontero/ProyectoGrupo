@@ -83,8 +83,23 @@ apellido.addEventListener('keypress', () => {
   }
 });
 
-dni.addEventListener('change', () => {});
-dni.addEventListener('keypress', () => {});
+dni.addEventListener('change', () => {
+  let entrada = dni.value;
+  let numero = '';
+  const letras = 'TRWAGMYFPDXBNJZSQVHLCKET';
+
+  for (let i = 0; i < entrada.length - 1; i++) {
+    numero += entrada[i];
+  }
+
+  if (letras[Number(numero) % 23] == entrada[entrada.length - 1]) {
+    console.log('La letra es correcta');
+  } else {
+    dni.value = '';
+    mensaje.innerHTML = 'Error en el DNI';
+  }
+});
+
 direccion.addEventListener('change', () => {});
 direccion.addEventListener('keypress', () => {});
 poblacion.addEventListener('change', () => {});
