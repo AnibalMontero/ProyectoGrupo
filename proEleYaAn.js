@@ -138,13 +138,55 @@ poblacion.addEventListener('change', () => {
     }
   }
 });
-poblacion.addEventListener('keypress', () => {});
-pais.addEventListener('change', () => {});
-pais.addEventListener('keypress', () => {});
-email.addEventListener('change', () => {});
-email.addEventListener('keypress', () => {});
-emailconfirm.addEventListener('change', () => {});
-emailconfirm.addEventListener('keypress', () => {});
+
+pais.addEventListener('change', () => {
+  let entrada = pais.value;
+  for (let i = 0; i < entrada.length; i++) {
+    if (
+      (entrada[i].charCodeAt() >= 65 && entrada[i].charCodeAt() <= 90) ||
+      (entrada[i].charCodeAt() >= 97 && entrada[i].charCodeAt() <= 122)
+    ) {
+      priLetra = entrada[0].toUpperCase();
+      resto = entrada.slice(1).toLowerCase();
+      cambio = priLetra + resto;
+      pais.value = cambio;
+    } else {
+      pais.value = '';
+      mensaje.innerHTML = 'Error en el pais';
+    }
+  }
+});
+
+email.addEventListener('change', () => {
+  let entrada = email.value;
+  let contador = 0;
+  if (
+    entrada.charAt(entrada.length - 4) != '.' &&
+    entrada.charAt(entrada.length - 3) != '.'
+  ) {
+    mensaje.innerHTML = 'No tienes el punto ';
+    email.value = '';
+  }
+  for (let i = 0; i < entrada.length; i++) {
+    if (entrada[i] == '@') {
+      contador++;
+    }
+  }
+  if (contador != 1) {
+    mensaje.innerHTML = 'No es un formato válido de email';
+    email.value = '';
+  }
+});
+
+emailconfirm.addEventListener('change', () => {
+  let entradaPrimera = email.value;
+  let entrada = emailconfirm.value;
+  if (entradaPrimera != entrada) {
+    mensaje.innerHTML = 'Los email no coinciden';
+    emailconfirm.value = '';
+  }
+});
+
 intereses.addEventListener('change', () => {
   const listaIntereses = ['mercado inmobiliario', 'bolsa', 'bienes estatales'];
   let entrada = intereses.value;
@@ -166,7 +208,19 @@ intereses.addEventListener('change', () => {
       'Al menos una afición tiene que estar relacionada con el banco';
   }
 });
-intereses.addEventListener('keypress', () => {});
+
 contrasena.addEventListener('change', () => {});
 contrasena.addEventListener('keypress', () => {});
-boton.addEventListener('click', () => {});
+boton.addEventListener('click', () => {
+  let tabla = document.getElementsByTagName('td');
+  for (let i = 0; i < tabla.length; i++) {
+    tabla[0].textContent = nombre.value;
+    tabla[1].textContent = apellido.value;
+    tabla[2].textContent = dni.value;
+    tabla[3].textContent = 'Anibal';
+    tabla[4].textContent = 'Anibal';
+    tabla[5].textContent = 'Anibal';
+    tabla[6].textContent = 'Anibal';
+  }
+  console.log(tabla);
+});
