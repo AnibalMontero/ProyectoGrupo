@@ -1,6 +1,15 @@
 let nombre = document.querySelector('#nombre');
 let apellido = document.querySelector('#apellido');
 let dni = document.querySelector('#dni');
+let mensaje = document.querySelector('#mensajeError');
+let direccion = document.querySelector('#direccion');
+let poblacion = document.querySelector('#poblacion');
+let pais = document.querySelector('#pais');
+let email = document.querySelector('#email');
+let emailconfirm = document.querySelector('#emailconfirm');
+let intereses = document.querySelector('#intereses');
+let contrasena = document.querySelector('#contrasena');
+let boton = document.querySelector('#send');
 
 nombre.addEventListener('change', () => {
   let entrada = nombre.value;
@@ -15,6 +24,7 @@ nombre.addEventListener('change', () => {
       nombre.value = cambio;
     } else {
       nombre.value = '';
+      nombre.innerHTML = 'Error en el nombre';
     }
   }
 });
@@ -32,6 +42,7 @@ nombre.addEventListener('keypress', () => {
       nombre.value = cambio;
     } else {
       nombre.value = '';
+      mensaje.innerHTML = 'Error en el nombre';
     }
   }
 });
@@ -49,6 +60,7 @@ apellido.addEventListener('change', () => {
       apellido.value = cambio;
     } else {
       apellido.value = '';
+      mensaje.innerHTML = 'Error en el apellido';
     }
   }
 });
@@ -66,6 +78,25 @@ apellido.addEventListener('keypress', () => {
       apellido.value = cambio;
     } else {
       apellido.value = '';
+      mensaje.innerHTML = 'Error en el apellido';
     }
   }
 });
+
+dni.addEventListener('change', () => {});
+dni.addEventListener('keypress', () => {});
+direccion.addEventListener('change', () => {});
+direccion.addEventListener('keypress', () => {});
+poblacion.addEventListener('change', () => {});
+poblacion.addEventListener('keypress', () => {});
+pais.addEventListener('change', () => {});
+pais.addEventListener('keypress', () => {});
+email.addEventListener('change', () => {});
+email.addEventListener('keypress', () => {});
+emailconfirm.addEventListener('change', () => {});
+emailconfirm.addEventListener('keypress', () => {});
+intereses.addEventListener('change', () => {});
+intereses.addEventListener('keypress', () => {});
+contrasena.addEventListener('change', () => {});
+contrasena.addEventListener('keypress', () => {});
+boton.addEventListener('click', () => {});
