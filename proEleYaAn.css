@@ -1,6 +1,41 @@
-form.formulario {
-    display: table;
+html {
+    box-sizing: border-box; /* para que el border, padding, etc no afecte el ancho de nuestros elementos*/
+    font-size: 62.5%; /* 1rem = 10px*/
 }
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 2rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 77rem;
+    background-color: red;
+}
+
+
+
+.contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+}
+
+.nombre {
+
+}
+
+/* form.formulario {
+    display: table;
+} */
 
 div.formulario {
     display: table-row;

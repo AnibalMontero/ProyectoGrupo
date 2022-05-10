@@ -5,38 +5,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Banco</title>
+    <link href="proEleYaAn.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
     <form>
-      <div class="nombre">
-        <label for="nombre">Nombre: </label>
-        <input type="text" id="nombre" required />
-      </div>
-      <div class="apellido">
-        <label for="apellido">Apellidos: </label>
-        <input type="text" id="apellidos" required placeholder="Ej: García" />
-      </div>
+      <legend>Rellene todos los campos</legend>
+      <div class="contenedor">
+        <div class="nombre">
+          <label for="nombre">Nombre: </label>
+          <input type="text" id="nombre" placeholder="Solo letras" required />
+        </div>
 
-      <div class="dni">
-        <label for="dni">DNI: </label>
-        <input type="text" id="dni" />
-      </div>
+        <div class="apellido">
+          <label for="apellido">Apellidos: </label>
+          <input type="text" id="apellido" placeholder="Ej: García" required />
+        </div>
 
-      <div class="login">
-        <label for="email">Dirección: </label>
-        <input type="adress" name="adress" id="adress" required />
-        <label for="contraseña">Enter your email: </label>
-        <input type="password" name="email" id="email" required />
-      </div>
+        <div class="dni">
+          <label for="dni">DNI: </label>
+          <input type="text" id="dni" placeholder="XXXXXXXX-X" required />
+        </div>
 
-      <div class="emailConfirmacion">
-        <label for="email">Confirmar email: </label>
-        <input type="email" name="email" id="email" required />
-      </div>
+        <div class="direccion">
+          <label for="direccion">Direccion: </label>
+          <input
+            type="text"
+            id="direccion"
+            required
+            placeholder="Tipo vía/
+          Nombre vía, Portal, Piso, CP, Población, Pais"
+          />
+        </div>
 
-      <div class="form-example">
-        <input type="submit" value="Subscribe!" />
+        <div class="login">
+          <label for="email">Correo electrónico: </label>
+          <input
+            type="adress"
+            name="adress"
+            id="adress"
+            required
+            placeholder="Ej: garcía@gmail.com"
+          />
+        </div>
+
+        <div class="emailConfirmacion">
+          <label for="email2">Confirmar correo electrónico: </label>
+          <input type="email" id="emailconfirm" required />
+        </div>
+
+        <div class="intereses">
+          <label for="intereses">Intereses: </label>
+          <input type="text" id="intereses" />
+        </div>
+
+        <div class="contraseña">
+          <label for="contraseña">Contraseña: </label>
+          <input type="password" id="email" required />
+        </div>
+
+        <div class="submit">
+          <input type="submit" value="Continuar" />
+        </div>
       </div>
     </form>
+    <script src="./proEleYaAn.js" type="text/javascript"></script>
   </body>
 </html>
