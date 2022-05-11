@@ -209,18 +209,54 @@ intereses.addEventListener('change', () => {
   }
 });
 
-contrasena.addEventListener('change', () => {});
-contrasena.addEventListener('keypress', () => {});
+contrasena.addEventListener('change', () => {
+  let entrada = contrasena.value;
+  let mayuscula = 0;
+  let minuscula = 0;
+  let numeros = 0;
+  let simbolo = 0;
+  if (entrada.length > 8 && entrada.length < 20) {
+    for (let i = 0; i < entrada.length; i++) {
+      if (entrada[i].charCodeAt() >= 65 && entrada[i].charCodeAt() <= 90) {
+        mayuscula++;
+      }
+      if (entrada[i].charCodeAt() >= 97 && entrada[i].charCodeAt() <= 122) {
+        minuscula++;
+      }
+      if (entrada[i].charCodeAt() >= 48 && entrada[i].charCodeAt() <= 57) {
+        numeros++;
+      }
+      if (
+        (entrada[i].charCodeAt() >= 37 && entrada[i].charCodeAt() <= 47) ||
+        (entrada[i].charCodeAt() >= 58 && entrada[i].charCodeAt() <= 64) ||
+        (entrada[i].charCodeAt() >= 92 && entrada[i].charCodeAt() <= 96)
+      ) {
+        simbolo++;
+      }
+    }
+    if (mayuscula != 0 && minuscula != 0 && numeros >= 2 && simbolo != 0) {
+      console.log('email OK');
+    } else {
+      mensaje.innerHTML =
+        'Email no válido. Debe tener Mayus, Minus, Símbolo, 2 o más numeros';
+      contrasena.value = '';
+    }
+  } else {
+    mensaje.innerHTML = 'Email no válido. Muy corto o muy largo';
+    contrasena.value = '';
+  }
+});
+
 boton.addEventListener('click', () => {
   let tabla = document.getElementsByTagName('td');
   for (let i = 0; i < tabla.length; i++) {
     tabla[0].textContent = nombre.value;
     tabla[1].textContent = apellido.value;
     tabla[2].textContent = dni.value;
-    tabla[3].textContent = 'Anibal';
-    tabla[4].textContent = 'Anibal';
-    tabla[5].textContent = 'Anibal';
-    tabla[6].textContent = 'Anibal';
+    tabla[3].textContent = direccion.value;
+    tabla[4].textContent = poblacion.value;
+    tabla[5].textContent = pais.value;
+    tabla[6].textContent = email.value;
   }
   console.log(tabla);
 });
